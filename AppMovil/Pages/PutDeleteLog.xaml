@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMovil.Pages.PutDeleteLog"
+             xmlns:models="clr-namespace:AppMovil.Models"
+             xmlns:viewmodels="clr-namespace:AppMovil.ViewModels"
+             x:DataType="viewmodels:PutDeleteLogViewModel"
+             Shell.PresentationMode="Modal">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid Padding="20,40" VerticalOptions="Center" RowSpacing="20"
+              RowDefinitions="auto,auto,auto,auto,auto,auto,auto,auto"
+              ColumnDefinitions="auto,*">
+            <VerticalStackLayout HorizontalOptions="Center" Grid.ColumnSpan="2">
+                <Label HorizontalTextAlignment="Center" FontSize="Title" Text="{Binding DataLog.SScanner}"></Label>
+                <Label HorizontalTextAlignment="Center" FontSize="Subtitle" Grid.ColumnSpan="2" Text="{Binding DataLog.dtScanner, StringFormat='{0:dd/MM HH:mm}'}"></Label>
+            </VerticalStackLayout>
+            <Label Grid.Row="1" Text="Equipo" Style="{StaticResource LabelAboutTitle}"/>
+            <Label Grid.Row="1" Grid.Column="1" Text="{Binding DtData.AsseTDescription}"/>
+            <Label Grid.Row="2" Text="Categoria" Style="{StaticResource LabelAboutTitle}"/>
+            <Label Grid.Row="2" Grid.Column="1" Text="{Binding DtData.AsseTCategory}"/>
+            <Label Grid.Row="3" Text="SubCategoria" Style="{StaticResource LabelAboutTitle}"/>
+            <Label Grid.Row="3" Grid.Column="1" Text="{Binding DtData.AsseTSubcategory}"/>
+            <Label Grid.Row="4" Text="Estatus" Style="{StaticResource LabelAboutTitle}"/>
+            <Picker SelectedItem="{Binding DataLog.DtUso}" Grid.Row="4" Grid.Column="1" Margin="0,-10,0,0"
+        Title="Selecciona un estatus">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Malo</x:String>
+                        <x:String>Regular</x:String>
+                        <x:String>Bueno</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Label Grid.Row="5" Text="Unidades" Style="{StaticResource LabelAboutTitle}"/>
+            <Entry Grid.Row="5" Grid.Column="1" Margin="0,-10,0,0"
+                   Placeholder="Unidades" Keyboard="Numeric"
+                   Text="{Binding DataLog.NPiezas}"/>
+            <Button Grid.Row="6"
+                    Text="{x:Static models:FAfontCodes.CameraPolaroid}"
+                    Command="{Binding CapturePhoto}"
+                    Style="{x:StaticResource IconButton}"/>
+            <Button Grid.Row="6" Grid.Column="1"
+                    Text="{x:Static models:FAfontCodes.ImagePolaroid}"
+                    IsVisible="{Binding BImage}"
+                    Command="{Binding GoToImage}"
+                    Style="{x:StaticResource IconButton}"/>
+            <Label Grid.Row="7" HorizontalOptions="Center" Grid.ColumnSpan="2"
+                   Text="{Binding DataLog.SImagen}"/>
+        </Grid>
+        <Grid Grid.Row="1" Padding="20,0,20,40">
+            <Button HorizontalOptions="Start"
+                    Command="{Binding Cancel}"
+                    Text="{x:Static models:FAfontCodes.ArrowLeftLong}"
+                    Style="{x:StaticResource IconButton}"/>
+
+            <Button HorizontalOptions="Center"
+                    Command="{Binding Delete}"
+                    Text="{x:Static models:FAfontCodes.TrashCan}"
+                    Style="{x:StaticResource IconButton}">
+
+            </Button>
+            <Button HorizontalOptions="End"
+                    Command="{Binding Send}"
+                    Text="{x:Static models:FAfontCodes.Check}"
+                    Style="{x:StaticResource IconButton}"/>
+        </Grid>
+        <Grid Grid.RowSpan="2" BackgroundColor="Silver" Opacity=".5" IsVisible="{Binding IsBusy}"/>
+        <ActivityIndicator Grid.RowSpan="2" x:Name="AI"
+                           Color="{StaticResource Primary}"
+                           IsRunning="{Binding IsBusy}"
+                           VerticalOptions="Center"/>
+    </Grid>
+</ContentPage>

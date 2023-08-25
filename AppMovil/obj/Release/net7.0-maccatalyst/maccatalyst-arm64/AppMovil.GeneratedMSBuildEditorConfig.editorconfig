@@ -1,0 +1,95 @@
+is_global = true
+build_property.TargetFramework = net7.0-maccatalyst
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = AppMovil
+build_property.ProjectDir = C:\Proyectos\ActivoFijo-master\AppMovil\
+
+[C:/Proyectos/ActivoFijo-master/AppMovil/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppMovil.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Proyectos/ActivoFijo-master/AppMovil/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppMovil.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Proyectos/ActivoFijo-master/AppMovil/Pages/AboutPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppMovil.Pages.AboutPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\AboutPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\AboutPage.xaml
+
+[C:/Proyectos/ActivoFijo-master/AppMovil/Pages/BarCodeScannerPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppMovil.Pages.BarCodeScannerPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\BarCodeScannerPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\BarCodeScannerPage.xaml
+
+[C:/Proyectos/ActivoFijo-master/AppMovil/Pages/DetailScannerPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppMovil.Pages.DetailScannerPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\DetailScannerPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\DetailScannerPage.xaml
+
+[C:/Proyectos/ActivoFijo-master/AppMovil/Pages/InventoryDetailPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppMovil.Pages.InventoryDetailPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\InventoryDetailPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\InventoryDetailPage.xaml
+
+[C:/Proyectos/ActivoFijo-master/AppMovil/Pages/InventoryPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppMovil.Pages.InventoryPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\InventoryPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\InventoryPage.xaml
+
+[C:/Proyectos/ActivoFijo-master/AppMovil/Pages/LogInPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppMovil.Pages.LogInPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\LogInPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\LogInPage.xaml
+
+[C:/Proyectos/ActivoFijo-master/AppMovil/Pages/PutDeleteLog.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppMovil.Pages.PutDeleteLog.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\PutDeleteLog.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\PutDeleteLog.xaml
+
+[C:/Proyectos/ActivoFijo-master/AppMovil/Pages/ScannerPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppMovil.Pages.ScannerPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\ScannerPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\ScannerPage.xaml
+
+[C:/Proyectos/ActivoFijo-master/AppMovil/PopUp/LogDetail.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppMovil.PopUp.LogDetail.xaml
+build_metadata.AdditionalFiles.TargetPath = PopUp\LogDetail.xaml
+build_metadata.AdditionalFiles.RelativePath = PopUp\LogDetail.xaml
+
+[C:/Proyectos/ActivoFijo-master/AppMovil/PopUp/ViewImage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppMovil.PopUp.ViewImage.xaml
+build_metadata.AdditionalFiles.TargetPath = PopUp\ViewImage.xaml
+build_metadata.AdditionalFiles.RelativePath = PopUp\ViewImage.xaml
+
+[C:/Proyectos/ActivoFijo-master/AppMovil/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppMovil.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Proyectos/ActivoFijo-master/AppMovil/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AppMovil.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml

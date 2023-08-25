@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" IgnorableNamespaces="uap rescap">
+  <Identity Name="7cd06702-3c5f-4b11-8ebe-44de0158b927" Publisher="CN=fernando.flores" Version="1.0.0.1" />
+  <mp:PhoneIdentity PhoneProductId="87504C9F-C3F3-4BE5-BFF3-59B789E54971" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>AppMovil</DisplayName>
+    <PublisherDisplayName>User Name</PublisherDisplayName>
+    <Logo>boxes_stackedStoreLogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.17763.0" MaxVersionTested="10.0.19041.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="$targetentrypoint$">
+      <uap:VisualElements DisplayName="AppMovil" Description="AppMovil" Square150x150Logo="boxes_stackedMediumTile.png" Square44x44Logo="boxes_stackedLogo.png" BackgroundColor="transparent">
+        <uap:DefaultTile Square71x71Logo="boxes_stackedSmallTile.png" Wide310x150Logo="boxes_stackedWideTile.png" Square310x310Logo="boxes_stackedLargeTile.png" ShortName="AppMovil">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+            <uap:ShowOn Tile="wide310x150Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="boxes_stackedSplashScreen.png" />
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+</Package>

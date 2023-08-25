@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMovil.Pages.LogInPage"
+             xmlns:models="clr-namespace:AppMovil.Models"
+             xmlns:viewmodels="clr-namespace:AppMovil.ViewModels"
+             x:DataType="viewmodels:AuthVIewModel"
+             Shell.PresentationMode="Modal"
+             Title="LogInPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label FontSize="Title" HorizontalTextAlignment="Center" Padding="0,30">Inicio de Sesión</Label>
+        <VerticalStackLayout Grid.Row="1" VerticalOptions="Center" Spacing="25" Padding="40,0">
+            <Entry HorizontalTextAlignment="Center" Text="{Binding Credentials.SUser}" Placeholder="Usuario">
+
+            </Entry>
+            <Entry HorizontalTextAlignment="Center" IsPassword="True" Text="{Binding Credentials.SPassword}" Placeholder="Contraseña">
+
+            </Entry>
+            <HorizontalStackLayout IsVisible="{Binding BAvalible}" HorizontalOptions="Center">
+                <Switch IsToggled="{Binding BSave}"></Switch>
+                <Label Margin="0,15,0,0">Inicio con huella</Label>
+            </HorizontalStackLayout>
+            <Button Command="{Binding LogIn}" Text="Iniciar Sesión" CornerRadius="20">
+
+            </Button>
+            <Button IsVisible="{Binding BFinger}" Command="{Binding LogInFinger}" Text="{x:Static models:FAfontCodes.Fingerprint}"
+                    Style="{x:StaticResource IconButton}">
+                
+            </Button>
+        </VerticalStackLayout>
+        <Grid Grid.RowSpan="2" BackgroundColor="Silver" Opacity=".5" IsVisible="{Binding IsBusy}"/>
+        <ActivityIndicator Grid.RowSpan="2" x:Name="AI"
+                           Color="{StaticResource Primary}"
+                           IsRunning="{Binding IsBusy}"
+                           VerticalOptions="Center"/>
+    </Grid>
+</ContentPage>

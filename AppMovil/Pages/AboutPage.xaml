@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMovil.Pages.AboutPage"
+             Title="About">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <VerticalStackLayout VerticalOptions="Center" Grid.Column="0">
+            <Label Style="{StaticResource LabelAboutTitle}">
+                Desarrollado por:
+            </Label>
+            <Label Style="{StaticResource LabelAboutTitle}">
+                Año publicación: 
+            </Label>
+            <Label Style="{StaticResource LabelAboutTitle}">
+                Lenguaje de desarrollo:
+            </Label>
+            <Label Style="{StaticResource LabelAboutTitle}">
+                Licencia FA: 
+            </Label>
+        </VerticalStackLayout>
+        <VerticalStackLayout VerticalOptions="Center" Grid.Column="1">
+            <Label>
+                FARMACIAS ESPECIALIZADAS SA de CV
+            </Label>
+            <Label>
+                2022
+            </Label>
+            <Label>
+                MAUI
+            </Label>
+            <Label>
+                FANASA
+            </Label>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

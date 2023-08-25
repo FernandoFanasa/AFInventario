@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mct:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mct="clr-namespace:CommunityToolkit.Maui.Views;assembly=CommunityToolkit.Maui"
+             x:Class="AppMovil.PopUp.LogDetail"
+             xmlns:viewmodels="clr-namespace:AppMovil.ViewModels"
+             xmlns:models="clr-namespace:AppMovil.Models"
+             x:DataType="viewmodels:LogsViewModel"
+             CanBeDismissedByTappingOutsideOfPopup="False"
+           Size="300,500">
+    <Grid RowDefinitions="auto, *, auto" Padding="10, 10, 10, 10">
+        <Label HorizontalTextAlignment="Center" FontSize="Title" FontAttributes="Bold" Text="{Binding LogInv.SScanner}"></Label>
+        <ListView Grid.Row="1" ItemsSource="{Binding Logs}" Margin="0, 0, 0, 15" ItemTapped="ListView_ItemTapped">
+            <ListView.Header>
+                <Grid ColumnDefinitions="*,*,*" Margin="0,0,0,20">
+                    <Label FontSize="Subtitle">Estatus</Label>
+                    <Label FontSize="Subtitle" HorizontalTextAlignment="Center" Grid.Column="1">Piezas</Label>
+                    <Label FontSize="Subtitle" Grid.Column="2" HorizontalTextAlignment="End">Fecha</Label>
+                </Grid>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid ColumnDefinitions="*, *, *" x:DataType="models:invScannerLog"
+                              Padding="10, 15, 10, 10">
+                            <Label Text="{Binding DtUso}"></Label>
+                            <Label HorizontalTextAlignment="Center" Grid.Column="1" Text="{Binding NPiezas}"></Label>
+                            <Label Grid.Column="2" HorizontalTextAlignment="End" Text="{Binding dtScanner, StringFormat='{0:dd/MM HH:mm}'}"></Label>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Grid.Row="2" Text="Cerrar" Clicked="Button_Clicked"></Button>
+    </Grid>
+</mct:Popup>

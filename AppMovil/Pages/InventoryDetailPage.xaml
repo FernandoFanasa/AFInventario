@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMovil.Pages.InventoryDetailPage"
+             xmlns:viewmodels="clr-namespace:AppMovil.ViewModels"
+             xmlns:models="clr-namespace:AppMovil.Models"
+             x:DataType="viewmodels:InventoryDetailVIewModel"
+             Title="Resumen">
+    <RefreshView IsRefreshing="{Binding IsBusy}" Command="{Binding LoadDetail}">
+        <ListView x:Name="DetailList" ItemsSource="{Binding Detail}" SeparatorColor="{StaticResource Primary}"
+                  SelectedItem="{Binding LogItem}" ItemTapped="ListView_ItemTapped">
+            <ListView.Header>
+                <Grid ColumnDefinitions="*, *" Padding="10, 15, 10, 20">
+                    <Label Grid.Column="0"
+                        Text="Etiqueta"
+                        FontSize="Subtitle"
+                        FontAttributes="Bold" />
+                    <Label
+                        Grid.Column="1"
+                        Text="Piezas"
+                        FontSize="Subtitle"
+                        HorizontalOptions="End" />
+                </Grid>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid x:DataType="models:invScannerLog"
+                              Padding="10, 15, 10, 10"
+                              RowDefinitions="auto" ColumnDefinitions="*, *">
+                            <Label Grid.Column="0"
+                           Text="{Binding SScanner}"
+                           FontAttributes="Bold" />
+                            <Label
+                           Grid.Column="1"
+                           Text="{Binding NPiezas}"
+                           HorizontalOptions="End" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </RefreshView>
+</ContentPage>

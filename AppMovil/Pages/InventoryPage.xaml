@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMovil.Pages.InventoryPage"
+             xmlns:viewmodels="clr-namespace:AppMovil.ViewModels"
+             xmlns:models="clr-namespace:AppMovil.Models"
+             x:DataType="viewmodels:InventoryViewModel"
+             x:Name="Page"
+             Title="Inventarios">
+
+    <ContentPage.Resources>
+        <Style TargetType="Label" x:Key="lblEstatus">
+            <Setter Property="TextColor" Value="DarkGreen"/>
+            <Setter Property="Text" Value="Activo"/>
+            <Style.Triggers>
+                <DataTrigger TargetType="Label" x:DataType="models:admInventory" Binding="{Binding BActive}" Value="False">
+                    <Setter Property="TextColor" Value="{StaticResource Tertiary}"/>
+                    <Setter Property="Text" Value="Inactivo"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </ContentPage.Resources>
+
+    <RefreshView IsRefreshing="{Binding IsBusy}" Command="{Binding LoadInventorys}">
+        <CollectionView ItemsSource="{Binding Inventorys}" SelectionMode="Single"  SelectedItem="{Binding SelectedInventory}" SelectionChangedCommand="{Binding ChangeInventory}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid x:DataType="models:admInventory" Padding="10,10,10,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label FontSize="16" FontAttributes="Bold" Grid.ColumnSpan="2" HorizontalOptions="Center" Text="{Binding SInventory}"/>
+                        <Label Grid.Row="1" FontAttributes="Bold" Text="Incio:" HorizontalOptions="Center"/>
+                        <Label Grid.Row="1" FontAttributes="Bold" Grid.Column="1" Text="Fin:" HorizontalOptions="Center"/>
+                        <Label Grid.Row="2" HorizontalOptions="CenterAndExpand" Text="{Binding DtStart, StringFormat='{0:dd/MM/yy HH:mm}'}"/>
+                        <Label Grid.Row="2" HorizontalOptions="CenterAndExpand" Grid.Column="1" Text="{Binding DtEnd, StringFormat='{0:dd/MM/yy HH:mm}'}"/>
+                        <Label Grid.Row="3" Style="{StaticResource lblEstatus}"/>
+                        <Button HeightRequest="30" Command="{Binding BindingContext.ViewDetail, Source={x:Reference Page}}" CommandParameter="{Binding UiInventory}" WidthRequest="30" Grid.Row="3" Grid.Column="1" HorizontalOptions="End" FontSize="20" Text="{x:Static models:FAfontCodes.SquareList}" Style="{x:StaticResource IconButton}"/>
+                        <BoxView HeightRequest="1" Grid.Row="4" Grid.ColumnSpan="2" Color="{StaticResource Primary}"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </RefreshView>
+</ContentPage>

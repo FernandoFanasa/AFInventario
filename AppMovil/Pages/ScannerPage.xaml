@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppMovil.Pages.ScannerPage"
+             xmlns:models="clr-namespace:AppMovil.Models"
+             xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI"
+             xmlns:viewmodels="clr-namespace:AppMovil.ViewModels"
+             x:DataType="viewmodels:ScannerViewModel"
+             Title="">
+    <ScrollView>
+        <VerticalStackLayout Spacing="25"
+                             VerticalOptions="Center"
+                             Padding="30,0">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="End" Spacing="40">
+                <Button Text="Cerrar Sesión" Clicked="LogoutButton_Clicked" />
+            </StackLayout>
+            <Grid RowDefinitions="auto,auto">
+                <Entry x:Name="Etiqueta" Placeholder="Etiqueta" HorizontalTextAlignment="Center" Text="{Binding BarCode}">
+
+                </Entry>
+            </Grid>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="40">
+                <Button Command="{Binding SendBarCodeCommand}" CommandParameter="{Binding BarCode}" Text="{x:Static models:FAfontCodes.CircleCheck}"
+                    Style="{x:StaticResource IconButton}">
+                </Button>
+                <Button Clicked="Button_Clicked" Text="{x:Static models:FAfontCodes.BarcodeScan}" Style="{x:StaticResource IconButton}">
+                    
+                </Button>
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

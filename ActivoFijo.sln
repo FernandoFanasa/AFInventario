@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33328.57
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppMovil", "AppMovil\AppMovil.csproj", "{687D62D4-6B48-469A-B079-A7EDA95CE998}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{F1575D74-8BC4-4D6E-B017-6ECA1831BDEF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{687D62D4-6B48-469A-B079-A7EDA95CE998}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{687D62D4-6B48-469A-B079-A7EDA95CE998}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{687D62D4-6B48-469A-B079-A7EDA95CE998}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{687D62D4-6B48-469A-B079-A7EDA95CE998}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{687D62D4-6B48-469A-B079-A7EDA95CE998}.Release|Any CPU.Build.0 = Release|Any CPU
+		{687D62D4-6B48-469A-B079-A7EDA95CE998}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F1575D74-8BC4-4D6E-B017-6ECA1831BDEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1575D74-8BC4-4D6E-B017-6ECA1831BDEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1575D74-8BC4-4D6E-B017-6ECA1831BDEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1575D74-8BC4-4D6E-B017-6ECA1831BDEF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
+	EndGlobalSection
+EndGlobal

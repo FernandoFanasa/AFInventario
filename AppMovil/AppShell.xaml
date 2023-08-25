@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AppMovil.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AppMovil"
+    xmlns:pages="clr-namespace:AppMovil.Pages"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar>
+        <Tab Title="Escaneo" Icon="barcode_read.svg">
+            <ShellContent ContentTemplate="{DataTemplate pages:ScannerPage}"/>
+        </Tab>
+        <Tab Title="Inventario" Icon="warehouse_full.svg">
+            <ShellContent ContentTemplate="{DataTemplate pages:InventoryPage}"/>
+        </Tab>
+        
+        <!--<Tab Title="Acerca" Icon="user_vneck_hair.svg">
+            <ShellContent ContentTemplate="{DataTemplate pages:AboutPage}"/>
+        </Tab>-->
+    </TabBar>
+
+</Shell>

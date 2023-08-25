@@ -1,0 +1,73 @@
+<h1>Inventario</h1>
+<h2>Configuración</h2>
+<form class="row middle-xs" [formGroup]="frmInventory" (ngSubmit)="CreateInventory()">
+    <div class="col-xs">
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input autocomplete="off" maxlength="20" matInput formControlName="sInventory" placeholder="Nombre de referencia">
+            <div matSuffix style="position: relative; bottom: 7px;">
+                <i class="fa-light fa-input-text  fa-xl"></i>
+            </div>
+            <mat-hint>Máximo caracteres: {{frmInventory.controls['sInventory'].value.length}}/20</mat-hint>
+        </mat-form-field>
+    </div>
+    <div class="col-xs">
+        <mat-form-field appearance="outline">
+            <mat-label>Vigencia del Inventario</mat-label>
+            <mat-date-range-input [dateFilter]="weekdays" [rangePicker]="rangePicker">
+                <input readonly formControlName="dtStart" matStartDate placeholder="Inicio">
+                <input readonly formControlName="dtEnd" matEndDate placeholder="Fin">
+            </mat-date-range-input>
+            <mat-datepicker-toggle class="center-i" matSuffix [for]="rangePicker">
+                <i matDatepickerToggleIcon class="fa-light fa-calendar-range fa-xl"></i>
+            </mat-datepicker-toggle>
+            <mat-date-range-picker #rangePicker>
+                <mat-date-range-picker-actions>
+                    <button type="button" mat-button matDateRangePickerCancel>Cancel</button>
+                    <button type="button" mat-raised-button color="primary" matDateRangePickerApply>Apply</button>
+                </mat-date-range-picker-actions>
+            </mat-date-range-picker>
+        </mat-form-field>
+    </div>
+    <div class="col-xs">
+        <button type="submit" mat-raised-button [disabled]="frmInventory.invalid || inSendInventory" color="primary">
+            <span *ngIf="!frmInventory.invalid && !inSendInventory">
+                Crear&nbsp;&nbsp;
+                <i class="fa-light fa-paper-plane"></i>
+            </span>
+            <span *ngIf="frmInventory.invalid && !inSendInventory">
+                Invalid&nbsp;&nbsp;
+                <i  class="fa-light fa-circle-xmark"></i>
+            </span>
+            <span *ngIf="inSendInventory">
+                En proceso
+                <i class="fa-light fa-atom fa-spin"></i>
+            </span>
+        </button>
+    </div>
+</form>
+<article class="accordion" *ngFor="let d of data">
+    <div class="row">
+        <div class="col-xs">
+            <label class="accordion_link">
+                {{d.sInventory}}
+                <input style="display: none;" type="checkbox">
+            </label>
+        </div>
+        <div class="col-xs end-xs" style="padding-right: 5%;">
+            <label class="vigencia">
+                {{d.dtStart | date: 'dd/MM/yy'}} - {{d.dtEnd | date: 'dd/MM/yy'}}
+            </label>
+            <i style="margin-left: 10px;" class="fa-light fa-chevrons-down rotacion"></i>
+        </div>
+    </div>
+    <div class="accordion_item">
+        <div class="accordion_content">
+            <p>un texto de ejemplo</p>
+            <br>
+            <p>un texto de ejemplo</p>
+            <br>
+            <p>un texto de ejemplo</p>
+        </div>
+    </div>
+</article>
